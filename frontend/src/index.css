@@ -1,0 +1,122 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base styles for better mobile experience */
+* {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-text-size-adjust: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Prevent horizontal scrolling */
+body {
+  @apply overflow-x-hidden;
+}
+
+/* Geometric border decorations */
+/* Base styles for geometric borders */
+.geometric-border-left {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 40px;
+  height: 100vh;
+  z-index: -1;
+  background: linear-gradient(45deg, 
+    #8B5CF6 0%, 
+    #EC4899 25%, 
+    #F59E0B 50%, 
+    #10B981 75%, 
+    #3B82F6 100%);
+  clip-path: polygon(0 0, 100% 0, 80% 100%, 0 100%);
+}
+
+.geometric-border-right {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 40px;
+  height: 100vh;
+  z-index: -1;
+  background: linear-gradient(225deg, 
+    #8B5CF6 0%, 
+    #EC4899 25%, 
+    #F59E0B 50%, 
+    #10B981 75%, 
+    #3B82F6 100%);
+  clip-path: polygon(20% 0, 100% 0, 100% 100%, 0 100%);
+}
+
+/* Media query for larger screens */
+@media (min-width: 768px) {
+  .geometric-border-left,
+  .geometric-border-right {
+    width: 60px;
+  }
+}
+
+/* Custom button styles */
+.btn-primary {
+  @apply bg-purple-600 text-white px-6 py-3 rounded-xl text-base font-semibold hover:bg-purple-700 active:bg-purple-800 transition-all duration-200 transform active:scale-95 md:active:scale-100 md:hover:scale-105 shadow-md hover:shadow-lg;
+}
+
+/* Media query for larger screens */
+@media (min-width: 768px) {
+  .btn-primary {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+}
+
+.btn-secondary {
+  @apply border-2 border-purple-600 text-purple-600 px-6 py-3 rounded-xl text-base font-semibold hover:bg-purple-600 hover:text-white active:bg-purple-700 transition-all duration-200 transform active:scale-95 md:active:scale-100 md:hover:scale-105;
+}
+
+/* Media query for larger screens */
+@media (min-width: 768px) {
+  .btn-secondary {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+}
+
+/* Touch target sizes for mobile */
+button, a[role="button"], .btn {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* Better touch feedback */
+@media (hover: none) {
+  .btn-primary, .btn-secondary {
+    transform: none !important;
+  }
+}
+
+/* Responsive typography */
+html {
+  font-size: 16px;
+  @media (max-width: 640px) {
+    font-size: 15px;
+  }
+}
+
+/* Prevent content from being hidden behind mobile browser UI */
+@supports (padding: max(0px)) {
+  body {
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+}

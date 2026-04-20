@@ -1,0 +1,132 @@
+/* Glassmorphic Effects */
+.glassmorphic {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+  border-radius: 10px;
+}
+
+.glassmorphic-nav {
+  background: rgba(255, 255, 255, 0.85) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3) !important;
+}
+
+/* 3D Text Effect */
+.text-3d {
+  text-shadow: 0 1px 0 #ccc,
+               0 2px 0 #c9c9c9,
+               0 3px 0 #bbb,
+               0 4px 0 #b9b9b9,
+               0 5px 0 #aaa,
+               0 6px 1px rgba(0,0,0,.1),
+               0 0 5px rgba(0,0,0,.1),
+               0 1px 3px rgba(0,0,0,.3),
+               0 3px 5px rgba(0,0,0,.2),
+               0 5px 10px rgba(0,0,0,.25),
+               0 10px 10px rgba(0,0,0,.2),
+               0 20px 20px rgba(0,0,0,.15);
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  transition: all 0.3s ease;
+}
+
+/* Image Hover Effects */
+.image-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.featured-image {
+  grid-column: span 2;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.featured-image img, .gallery-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-image {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  aspect-ratio: 1;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.gallery-image:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-image img:hover {
+  transform: scale(1.05);
+}
+
+/* Modal for expanded image */
+.image-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.image-modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-content {
+  max-width: 90%;
+  max-height: 90%;
+  position: relative;
+}
+
+.modal-content img {
+  max-width: 100%;
+  max-height: 80vh;
+  border-radius: 12px;
+}
+
+.close-modal {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.2);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.close-modal:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: rotate(90deg);
+}
